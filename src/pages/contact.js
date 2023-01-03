@@ -24,13 +24,14 @@ export const ContactForm = () => {
     <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '100px', color: '#FFFFFF' }}>
       <StyledContactForm>
         <h1>Contact Us</h1>
+        <h4>Based in Chantilly, Virginia</h4>
         <br></br>
         <form ref={form} onSubmit={sendEmail}>
-          <label>Name</label>
+          <label>Name *</label>
           <input type="text" name="user_name" />
-          <label>Email</label>
+          <label>Email Address *</label>
           <input type="email" name="user_email" />
-          <label>Message</label>
+          <label>Message *</label>
           <textarea name="message" />
           <input type="submit" value="Send" />
         </form>

@@ -1,7 +1,7 @@
 // 404 page design from https://codepen.io/genarocolusso/pen/XWbGMLp
 
 import React from 'react';
-// import '../css/NoPages.css'
+import '../css/NoPages.css'
 const NoPage = () => {
   return (
     <div className="main" style={{ display: 'flex', justifyContent: 'center' }}>
