@@ -8,7 +8,7 @@ import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 
 export default function Home() {
   return (
-    <ImageList sx={{ mx: 'auto',my: 'auto',mt:2,width: '70%', height: 750,'&::-webkit-scrollbar': {display: 'none'} }}variant="woven" cols={2} gap={20}>
+    <ImageList sx={{ mx: 'auto',my: 'auto',mt:2,width: '70%', height: 750,'&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={20}>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img
