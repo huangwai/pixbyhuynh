@@ -1,5 +1,5 @@
 import About from './pages/Overview';
-// import ContactForm from './pages/Contact';
+import ContactForm from './pages/Contact';
 import NoPage from './pages/NoPage';
 import Header from './components/Header';
 import Box from '@mui/material/Box';
@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/things" element={<Things />} />
           <Route exact path="/people" element={<People />} />
-          {/* <Route exact path="/contact" element={<ContactForm />} /> */}
+          <Route exact path="/contact" element={<ContactForm />} />
           <Route exact path="/graduation" element={<Graduation />} /> 
           <Route exact path="/captialone" element={<CapOne />} /> 
           <Route exact path="/georgetown" element={<GeorgeTown />} /> 
