@@ -10,12 +10,12 @@ export const ContactForm = () => {
 
     emailjs.sendForm('service_15qvc26', 'template_h8azk7t', form.current, 'iuzNDtNBVCkuhUrfg').then(
       result => {
-        console.log(result.text);
+        // console.log(result.text);
         alert('Message Sent!!!');
-        console.log('Message Sent');
+        // console.log('Message Sent');
       },
       error => {
-        console.log(error.text);
+        // console.log(error.text);
       }
     );
   };
