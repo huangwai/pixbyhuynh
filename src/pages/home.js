@@ -8,7 +8,7 @@ import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 
 export default function Home() {
   return (
-    <ImageList sx={{ mx: 'auto',my: 'auto',mt:2,width: '70%', height: 750,'&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={20}>
+    <ImageList sx={{ mx: 'auto',my: 'auto',mt:5,width: '60%', height: 900,'&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={20} rowHeight={'auto'}>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img
@@ -45,7 +45,7 @@ const itemData = [
   },
   //georgetown pics
   {
-    img: '/images/grad_2022/_POG6344.jpg',
+    img: '/images/georgetown/_POG3510.jpg',
     title: 'GeorgeTown',
     link: '/georgetown'
   },
@@ -57,13 +57,13 @@ const itemData = [
   },
   //valentines day pics
   {
-    img: '../images/grad_2022/_POG6345.jpg',
+    img: '../images/vday2022/_POG2197.jpg',
     title: 'Valentines Day 2022',
     link: '/valentines'
   },
   //steelwool pics here
   {
-    img: '../images/grad_2022/_POG6345.jpg',
+    img: '../images/stealwool/_POG5890.jpg',
     title: 'SteelWool',
     link: '/steelwool'
   },
