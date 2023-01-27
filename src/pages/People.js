@@ -1,12 +1,14 @@
 import React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import { Box } from '@mui/material';
 
 
 
 export default function People() {
   return (
-    <ImageList sx={{mx:'auto',my:'auto', width: '80%', height: 900,'&::-webkit-scrollbar': {display: 'none'} }} cols={3} rowHeight={'auto'}>
+    <Box sx={{ mx:'auto',my:'auto',width: '70%', height: 900, overflowY: 'scroll', '&::-webkit-scrollbar': {display: 'none'} }}>
+    <ImageList cols={3} gap = {30} rowHeight={'auto'}>
        {/* <ImageList sx={{ mx: 'auto',my: 'auto',mt:2,width: '70%', height: 750,'&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={20}></ImageList> */}
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
@@ -19,6 +21,7 @@ export default function People() {
         </ImageListItem>
       ))}
     </ImageList>
+    </Box>
   );
 }
 

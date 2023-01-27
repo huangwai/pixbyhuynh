@@ -8,7 +8,7 @@ import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 
 export default function Home() {
   return (
-    <ImageList sx={{ mx: 'auto',my: 'auto',mt:5,width: '60%', height: 900,'&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={20} rowHeight={'auto'}>
+    <ImageList sx={{ mx: 'auto',my: 'auto',mt:5,width: '60%', height: 900,'&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={30} rowHeight={'auto'}>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img
@@ -51,7 +51,7 @@ const itemData = [
   },
   //captial one pics
   {
-    img: '../images/grad_2022/_POG6215.jpg',
+    img: '../images/capone/_POG5450.jpg',
     title: 'Captial One HQ',
     link: '/captialone'
   },
@@ -69,7 +69,8 @@ const itemData = [
   },
   //Perry St Garage Pics here
   {
-    img: '../images/grad_2022/_POG6345.jpg',
+    img: '../images/perryStGarage/_DSC0949.jpg',
+
     title: 'Perry St Garage',
     link: '/perrystreet'
   },

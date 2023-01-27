@@ -1,32 +1,52 @@
-import * as React from "react";
-import Container from "@mui/material/Container";
-// import Image from "next/image";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-export default function Footer() {
-    return (
-      <Paper sx={{marginTop: 'calc(10% + 60px)',
-      width: '100%',
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      bottom: 0,
-      }} component="footer" square variant="outlined">
-        <Container maxWidth="lg">  
-          <Box
-            sx={{
-              flexGrow: 1,
-              justifyContent: "center",
-              display: "flex",
-              mb: 2,
-            }}
-          >
-            <Typography variant="caption" color="initial">
-              Copyright ©2022. [] Limited
-            </Typography>
-          </Box>
-        </Container>
-      </Paper>
-    );
-  }
+import React from 'react';
+import { Box, Container, Row, Column, FooterLink} from '../css/FooterStyles';
+
+const Footer = () => {
+  return (
+    <Box>
+      <h1 style={{ color: 'White', textAlign: 'center', marginTop: '-50px' }}>POWOW</h1>
+      <Container>
+        <Row>
+          <Column>
+            <FooterLink href="/">Home</FooterLink>
+          </Column>
+          <Column>
+            {/* <Heading>Chat</Heading> */}
+            <FooterLink href="/people">About</FooterLink>
+            {/* <FooterLink href="createRoom">Create Room</FooterLink>
+            <FooterLink href="publicChat">Start Chatting</FooterLink> */}
+          </Column>
+          <Column>
+            {/* <Heading>Contact Us</Heading> */}
+            <FooterLink href="/things">Things</FooterLink>
+          </Column>
+          <Column>
+            {/* <Heading>Social Media</Heading> */}
+            <FooterLink href="/contact">Contact</FooterLink>
+
+            {/* <i className="fab fa-facebook-f">
+                <span style={{ marginLeft: '10px' }}>Facebook</span>
+              </i>
+            </FooterLink>
+            <FooterLink href="#">
+              <i className="fab fa-instagram">
+                <span style={{ marginLeft: '10px' }}>Instagram</span>
+              </i>
+            </FooterLink>
+            <FooterLink href="#">
+              <i className="fab fa-twitter">
+                <span style={{ marginLeft: '10px' }}>Twitter</span>
+              </i>
+            </FooterLink>
+            <FooterLink href="#">
+              <i className="fab fa-youtube">
+                <span style={{ marginLeft: '10px' }}>Youtube</span>
+              </i>
+            </FooterLink> */}
+          </Column>
+        </Row>
+      </Container>
+    </Box>
+  );
+};
+export default Footer;

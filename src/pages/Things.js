@@ -1,12 +1,15 @@
 import React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import { Box } from '@mui/material';
 
 
 
 export default function Things() {
   return (
-    <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+    <Box sx={{ mx:'auto',my:'auto',width: '70%', height: 900, overflowY: 'scroll', '&::-webkit-scrollbar': {display: 'none'} }}>
+    <ImageList cols={3} gap = {30} rowHeight={'auto'}>
+       {/* <ImageList sx={{ mx: 'auto',my: 'auto',mt:2,width: '70%', height: 750,'&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={20}></ImageList> */}
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img
@@ -18,56 +21,85 @@ export default function Things() {
         </ImageListItem>
       ))}
     </ImageList>
+    </Box>
   );
 }
 
 const itemData = [
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
+    //Graduation pics
+    img: '/images/grad_2022/_POG6308.jpg',
+    title: 'VT Graduation 2022',
+    link: '/graduation'
+  },
+  //georgetown pics
+  {
+    img: '/images/georgetown/_POG3510.jpg',
+    title: 'GeorgeTown',
+    link: '/georgetown'
+  },
+  //captial one pics
+  {
+    img: '../images/grad_2022/_POG6215.jpg',
+    title: 'Captial One HQ',
+    link: '/captialone'
+  },
+  //valentines day pics
+  {
+    img: '../images/vday2022/_POG2197.jpg',
+    title: 'Valentines Day 2022',
+    link: '/valentines'
+  },
+  //steelwool pics here
+  {
+    img: '../images/stealwool/_POG5890.jpg',
+    title: 'SteelWool',
+    link: '/steelwool'
+  },
+  //Perry St Garage Pics here
+  {
+    img: '../images/grad_2022/_POG6345.jpg',
+    title: 'Perry St Garage',
+    link: '/perrystreet'
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
+    img: '../images/grad_2022/_POG6345.jpg',
+    title: 'Perry St Garage',
+    link: '/perrystreet'
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
+    img: '../images/grad_2022/_POG6345.jpg',
+    title: 'Perry St Garage',
+    link: '/perrystreet'
   },
   {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
+    img: '../images/grad_2022/_POG6345.jpg',
+    title: 'Perry St Garage',
+    link: '/perrystreet'
   },
-  {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-  },
+  //skyline pics here
+//   {
+//     img: '../images/grad_2022/_POG6345.jpg',
+//     // title: 'Laptop',
+//   },
+//   {
+//     img: '../images/grad_2022/_POG6345.jpg',
+//     title: 'Doors',
+//   },
+//   {
+//     img: '../images/grad_2022/_POG6345.jpg',
+//     title: 'Coffee',
+//   },
+//   {
+//     img: '../images/grad_2022/_POG6345.jpg',
+//     title: 'Storage',
+//   },
+//   {
+//     img: '../images/grad_2022/_POG6345.jpg',
+//     title: 'Coffee table',
+//   },
+//   {
+//     img: '../images/grad_2022/_POG6345.jpg',
+//     title: 'Blinds',
+//   },
 ];

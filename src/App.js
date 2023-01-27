@@ -15,7 +15,7 @@ import GeorgeTown from './pages/albums/GeorgeT';
 import PerrySt from './pages/albums/Perry';
 import Valentines from './pages/albums/Vday2022';
 import SteelWool from './pages/albums/SteelW';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 
 function App() {
   return (
@@ -39,7 +39,7 @@ function App() {
         </Routes>
       </Box>
     </Box>
-    <Footer/>
+    {/* <Footer/> */}
   </div>
   );
 }
