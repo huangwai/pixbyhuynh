@@ -1,14 +1,13 @@
 import React from 'react';
-// import ImageList from '@mui/material/ImageList';
-// import ImageListItem from '@mui/material/ImageListItem';
 import { Box } from '@mui/material';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ImageListItem, {
   imageListItemClasses
 } from "@mui/material/ImageListItem";
-// import ImageListItemBar from "@mui/material/ImageListItemBar";
-// import IconButton from "@mui/material/IconButton";
-// import InfoIcon from "@mui/icons-material/Info";
+import FadeInSection from '../components/FadeInSection';
+import '../css/fade.css';
+
+
 
 const theme = createTheme({
   breakpoints: {
@@ -21,13 +20,14 @@ const theme = createTheme({
   }
 });
 
+
 export default function People() {
   return (
     <ThemeProvider theme={theme}>
       {/* <h1>Jimmy Huynh</h1> */}
       {/* <h3>December 16th, 2022</h3> */}
       <Box
-      gap = {2}
+      gap = {2.5}
         sx={{
           mx:'auto',
           my: 'auto',
@@ -39,15 +39,15 @@ export default function People() {
           '&::-webkit-scrollbar': {display: 'none'},
           gridTemplateColumns: {
             mobile: "repeat(1, 1fr)",
-            bigMobile: "repeat(2, 1fr)",
-            tablet: "repeat(3, 1fr)",
-            desktop: "repeat(4, 1fr)"
+            bigMobile: "repeat(1, 1fr)",
+            tablet: "repeat(2, 1fr)",
+            desktop: "repeat(3, 1fr)"
           },
           [`& .${imageListItemClasses.root}`]: {
             display: "flex",
             flexDirection: "column"
           },
-          width: '80%',
+          width: '85%',
            height: '85%',
            flexGrow: 1,
            flexWrap: 'nowrap'
@@ -57,16 +57,17 @@ export default function People() {
         textAlign = 'center'
       >
         {itemData.map((item) => (
-          <ImageListItem key={item.img}>
+        <FadeInSection key={item}>
+          <ImageListItem 
+          key={item.img}>
             <img
               src={`${item.img}?w=248&fit=crop&auto=format`}
               srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
               alt={item.title}
               loading="lazy"
             />
-            {/* <ImageListItem key={item.img} cols={item.cols || 1}>
-      <img src={item.img} alt={item.title} /> */}
           </ImageListItem>
+          </FadeInSection>
         ))}
       </Box>
     </ThemeProvider>

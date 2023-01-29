@@ -11,16 +11,37 @@ import {
   ThemeProvider,
 } from '@mui/material/styles';
 
+import '../css/fade.css';
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
+function FadeInSection(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <div
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}
+    >
+      {props.children}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
     <ThemeProvider theme={theme}>
-    <ImageList sx={{ mx: 'auto',my: 'auto',mt:5,width: '60%', height: '85%','&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={30} rowHeight={'auto'}>
+    <ImageList
+     sx={{ mx: 'auto',my: 'auto',mt:5,width: '70%', height: '85%','&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={30} rowHeight={'auto'}>
       {itemData.map((item) => (
+        <FadeInSection key={item}>
         <ImageListItem sx={{
           fontWeight: 'bold',
           fontSize: 40,
@@ -47,6 +68,7 @@ export default function Home() {
             }
           />
         </ImageListItem>
+        </FadeInSection>
       ))}
     </ImageList>
     </ThemeProvider>
@@ -98,6 +120,12 @@ const itemData = [
     img: '../images/nyc/_DSC4715.jpg',
     title: 'New York City',
     link: '/nyc'
+  },
+  {
+    //NYC Pics hehe
+    img: '../images/nyla/_POG3561.jpg',
+    title: 'Nyla',
+    link: '/nyla'
   },
 
 ];

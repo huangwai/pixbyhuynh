@@ -11,11 +11,18 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import Typography from '@mui/material/Typography';
+import Slide from '@mui/material/Slide';
+// import PropTypes from 'prop-types';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+
 
 const pages = ['me','people', 'things', 'contact'];
 
+
+
 function ResponsiveAppBar() {
+  const trigger = useScrollTrigger();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -38,11 +45,10 @@ theme.typography.h3 = {
     fontSize: '2rem',
   },
 };
-
-
-
+// const trigger = useScrollTrigger();
   return (
     <ThemeProvider theme={theme}>
+    <Slide appear={false} direction="down" in={!trigger}>
     <AppBar sx={{ bgcolor: '#10131F',mx:'auto'}} position="static">
       <Container maxWidth="xl">
         <Toolbar sx={{ bgcolor: '#10131F',mx:'auto'}} disableGutters>
@@ -152,6 +158,7 @@ theme.typography.h3 = {
         </Toolbar>
       </Container>
     </AppBar>
+    </Slide>
     </ThemeProvider>
   );
 }

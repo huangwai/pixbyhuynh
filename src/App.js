@@ -1,4 +1,3 @@
-import About from './pages/Overview';
 import ContactForm from './pages/Contact';
 import NoPage from './pages/NoPage';
 import Header from './components/Header';
@@ -14,6 +13,7 @@ import PerrySt from './pages/albums/Perry';
 import SteelWool from './pages/albums/SteelW';
 import Me from './pages/Me';
 import Nyc from './pages/albums/Nyc';
+import Nyla from './pages/albums/Nyla';
 
 function App() {
   return (
@@ -23,7 +23,6 @@ function App() {
        <Box component="main" sx={{ flexGrow: 1 }}> */}
         <Routes>
           <Route exact path="/" element={<Home/>} />
-          <Route exact path="/about" element={<About />} />
           <Route exact path="/things" element={<Things />} />
           <Route exact path="/people" element={<People />} />
           <Route exact path="/contact" element={<ContactForm />} />
@@ -33,7 +32,8 @@ function App() {
           <Route exact path="/steelwool" element={<SteelWool />} /> 
           <Route exact path="/me" element={<Me />} />
           <Route exact path="/nyc" element={<Nyc />} />
-
+          <Route exact path="/nyla" element={<Nyla />} />
+          {/* If page not found below */}
           <Route exact path="/*" element={<NoPage />} />
         </Routes>
       {/* </Box>

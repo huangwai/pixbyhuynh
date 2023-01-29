@@ -1,14 +1,10 @@
 import React from 'react';
-// import ImageList from '@mui/material/ImageList';
-// import ImageListItem from '@mui/material/ImageListItem';
 import { Box } from '@mui/material';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ImageListItem, {
   imageListItemClasses
 } from "@mui/material/ImageListItem";
-// import ImageListItemBar from "@mui/material/ImageListItemBar";
-// import IconButton from "@mui/material/IconButton";
-// import InfoIcon from "@mui/icons-material/Info";
+import FadeInSection from '../../components/FadeInSection';
 
 const theme = createTheme({
   breakpoints: {
@@ -28,7 +24,7 @@ export default function SteelWool() {
       <h3>September 16th, 2022</h3>
       <Box
       
-      gap = {2}
+      gap = {2.5}
         sx={{
           mx:'auto',
           my: 'auto',
@@ -39,15 +35,15 @@ export default function SteelWool() {
           '&::-webkit-scrollbar': {display: 'none'},
           gridTemplateColumns: {
             mobile: "repeat(1, 1fr)",
-            bigMobile: "repeat(2, 1fr)",
-            tablet: "repeat(3, 1fr)",
-            desktop: "repeat(4, 1fr)"
+            bigMobile: "repeat(1, 1fr)",
+            tablet: "repeat(2, 1fr)",
+            desktop: "repeat(3, 1fr)"
           },
           [`& .${imageListItemClasses.root}`]: {
             display: "flex",
             flexDirection: "column"
           },
-          width: '80%',
+          width: '85%',
            height: '85%',
            flexGrow: 1,
            flexWrap: 'nowrap'
@@ -57,6 +53,7 @@ export default function SteelWool() {
         textAlign = 'center'
       >
         {itemData.map((item) => (
+          <FadeInSection key={item}>
           <ImageListItem key={item.img}>
             <img
               src={`${item.img}?w=248&fit=crop&auto=format`}
@@ -67,6 +64,7 @@ export default function SteelWool() {
             {/* <ImageListItem key={item.img} cols={item.cols || 1}>
       <img src={item.img} alt={item.title} /> */}
           </ImageListItem>
+          </FadeInSection>
         ))}
       </Box>
     </ThemeProvider>
