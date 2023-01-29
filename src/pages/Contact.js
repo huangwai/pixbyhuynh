@@ -48,7 +48,7 @@ const StyledContactForm = styled.div`
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     font-size: 16px;
     color: #ffffff;
     input {
@@ -63,11 +63,11 @@ const StyledContactForm = styled.div`
       }
     }
     textarea {
-      max-width: 100%;
+      max-width: 90%;
       min-width: 100%;
-      width: 100%;
+      width: 90%;
       max-height: 100px;
-      min-height: 100px;
+      min-height: 200px;
       padding: 7px;
       outline: none;
       border-radius: 5px;

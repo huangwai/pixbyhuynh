@@ -73,6 +73,12 @@ export default function Me() {
     //List items below
     const itemData = [
       {
+        img: '../images/me/_DSC2306.jpg',
+      },
+      {
+        img: '../images/me/_DSC1683.jpg',
+      },
+      {
         img: '../images/me/_DSC0065.jpg',
       },
       {
@@ -89,17 +95,10 @@ export default function Me() {
       },
 
       {
-        img: '../images/me/_DSC1683.jpg',
-      },
-      {
         img: '../images/me/_DSC1704.jpg',
       },
       {
         img: '../images/me/_DSC1708.jpg',
-      },
-      
-      {
-        img: '../images/me/_DSC2306.jpg',
       },
       {
         img: '../images/me/_DSC5737.jpg',
