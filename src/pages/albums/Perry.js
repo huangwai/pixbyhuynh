@@ -1,29 +1,73 @@
 import React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
+
 import { Box } from '@mui/material';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import ImageListItem, {
+  imageListItemClasses
+} from "@mui/material/ImageListItem";
+
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      mobile: 0,
+      bigMobile: 350,
+      tablet: 650,
+      desktop: 900
+    }
+  }
+});
 
 export default function PerrySt() {
-    return (
-        <Box sx={{ mx:'auto',my:'auto',width: '70%', height: 900, overflowY: 'scroll', '&::-webkit-scrollbar': {display: 'none'} }}>
-        <h1>Perry St Garage</h1>
-        <h3>Date Here...</h3>
-        <ImageList cols={3} gap = {30} rowHeight={'auto'}>
-           {/* <ImageList sx={{ mx: 'auto',my: 'auto',mt:2,width: '70%', height: 750,'&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={20}></ImageList> */}
-          {itemData.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-        </Box>
-      );
-    }
+  return (
+    <ThemeProvider theme={theme}>
+      <h1>Perry St Garage</h1>
+      <h3>Fall 2021</h3>
+      <Box
+      gap = {2}
+        sx={{
+          mx:'auto',
+          my: 'auto',
+          mt: '2%',
+          mb: '1',
+          backgroundColor: "#10131F",
+          display: "grid",
+          overflowY: 'scroll',
+          '&::-webkit-scrollbar': {display: 'none'},
+          gridTemplateColumns: {
+            mobile: "repeat(1, 1fr)",
+            bigMobile: "repeat(2, 1fr)",
+            tablet: "repeat(3, 1fr)",
+            desktop: "repeat(4, 1fr)"
+          },
+          [`& .${imageListItemClasses.root}`]: {
+            display: "flex",
+            flexDirection: "column"
+          },
+          width: '80%',
+           height: '85%',
+           flexGrow: 1,
+           flexWrap: 'nowrap'
+
+          
+        }}
+        textAlign = 'center'
+      >
+        {itemData.map((item) => (
+          <ImageListItem key={item.img}>
+            <img
+              src={`${item.img}?w=248&fit=crop&auto=format`}
+              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              alt={item.title}
+              loading="lazy"
+            />
+            {/* <ImageListItem key={item.img} cols={item.cols || 1}>
+      <img src={item.img} alt={item.title} /> */}
+          </ImageListItem>
+        ))}
+      </Box>
+    </ThemeProvider>
+  );
+}
     
     const itemData = [
       {

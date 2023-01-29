@@ -3,14 +3,28 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import ImageListItem from '@mui/material/ImageListItem';
-import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+// import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import Button from '@mui/material/Button';
+import {
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from '@mui/material/styles';
+
+
+let theme = createTheme();
+theme = responsiveFontSizes(theme);
 
 
 export default function Home() {
   return (
-    <ImageList sx={{ mx: 'auto',my: 'auto',mt:5,width: '60%', height: 900,'&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={30} rowHeight={'auto'}>
+    <ThemeProvider theme={theme}>
+    <ImageList sx={{ mx: 'auto',my: 'auto',mt:5,width: '60%', height: '85%','&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={30} rowHeight={'auto'}>
       {itemData.map((item) => (
-        <ImageListItem key={item.img}>
+        <ImageListItem sx={{
+          fontWeight: 'bold',
+          fontSize: 40,
+        }} key={item.img}>
           <img
             src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
             srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
@@ -18,6 +32,7 @@ export default function Home() {
             loading="lazy"
           />
           <ImageListItemBar
+          
             title={item.title}
             // subtitle={item.author}
             actionIcon={
@@ -26,15 +41,18 @@ export default function Home() {
                 aria-label={`info about ${item.title}`}
                 href={item.link}
               >
-                <ArrowCircleUpIcon />
+                {/* <ArrowCircleUpIcon /> */}
+                <Button variant="outlined">Explore</Button>
               </IconButton>
             }
           />
         </ImageListItem>
       ))}
     </ImageList>
+    </ThemeProvider>
   );
 }
+
 
 const itemData = [
   {
@@ -44,11 +62,11 @@ const itemData = [
     link: '/graduation'
   },
   //georgetown pics
-  {
-    img: '/images/georgetown/_POG3510.jpg',
-    title: 'GeorgeTown',
-    link: '/georgetown'
-  },
+  // {
+  //   img: '/images/georgetown/_POG3510.jpg',
+  //   title: 'GeorgeTown',
+  //   link: '/georgetown'
+  // },
   //captial one pics
   {
     img: '../images/capone/_POG5450.jpg',
@@ -56,11 +74,11 @@ const itemData = [
     link: '/captialone'
   },
   //valentines day pics
-  {
-    img: '../images/vday2022/_POG2197.jpg',
-    title: 'Valentines Day 2022',
-    link: '/valentines'
-  },
+  // {
+  //   img: '../images/vday2022/_POG2197.jpg',
+  //   title: 'Valentines Day 2022',
+  //   link: '/valentines'
+  // },
   //steelwool pics here
   {
     img: '../images/stealwool/_POG5890.jpg',
@@ -74,29 +92,12 @@ const itemData = [
     title: 'Perry St Garage',
     link: '/perrystreet'
   },
-  //skyline pics here
-//   {
-//     img: '../images/grad_2022/_POG6345.jpg',
-//     // title: 'Laptop',
-//   },
-//   {
-//     img: '../images/grad_2022/_POG6345.jpg',
-//     title: 'Doors',
-//   },
-//   {
-//     img: '../images/grad_2022/_POG6345.jpg',
-//     title: 'Coffee',
-//   },
-//   {
-//     img: '../images/grad_2022/_POG6345.jpg',
-//     title: 'Storage',
-//   },
-//   {
-//     img: '../images/grad_2022/_POG6345.jpg',
-//     title: 'Coffee table',
-//   },
-//   {
-//     img: '../images/grad_2022/_POG6345.jpg',
-//     title: 'Blinds',
-//   },
+
+  {
+    //NYC Pics hehe
+    img: '../images/nyc/_DSC4715.jpg',
+    title: 'New York City',
+    link: '/nyc'
+  },
+
 ];

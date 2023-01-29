@@ -21,14 +21,20 @@ const theme = createTheme({
   }
 });
 
-export default function TitlebarImageList() {
+export default function Graduation() {
   return (
     <ThemeProvider theme={theme}>
+      <h1>Virginia Tech Graduation Fall 2022</h1>
+      <h3>December 16th, 2022</h3>
       <Box
+      gap = {.5}
         sx={{
-          height: 450,
+          mx:'auto',
+          my: 'auto',
           backgroundColor: "#10131F",
           display: "grid",
+          overflowY: 'scroll',
+          '&::-webkit-scrollbar': {display: 'none'},
           gridTemplateColumns: {
             mobile: "repeat(1, 1fr)",
             bigMobile: "repeat(2, 1fr)",
@@ -38,7 +44,10 @@ export default function TitlebarImageList() {
           [`& .${imageListItemClasses.root}`]: {
             display: "flex",
             flexDirection: "column"
-          }
+          },
+          width: '80%',
+           height: 'auto'
+          
         }}
       >
         {itemData.map((item) => (

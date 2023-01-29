@@ -1,0 +1,120 @@
+/* START FOOTER PINNING CODE */
+
+.content-container {
+    min-height: calc(100vh - 34px);
+  }
+  
+  .footer--pin {
+    position: relative;
+    left: 0;
+    bottom: 0;
+  }
+  /* END FOOTER PINNING CODE */
+  
+  nav {
+    background-color: #e3c893;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 10px;
+    border-bottom: 1px solid #df9f23;
+  }
+  
+  nav div {
+    background-color: #df9f23;
+    border-radius: 30px;
+    width: 15px;
+    height: 15px;
+  }
+  
+  ul {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    list-style: none;
+    background-color: #df9f23;
+    border-radius: 30px;
+    width: 40px;
+    height: 10px;
+  }
+  
+  h1 {
+    font-family: Montserrat, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+    font-size: 1.6rem;
+    color: #b72828;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  p {
+    color: #2e2e2e;
+    margin: 0;
+  }
+  
+  main {
+    padding: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #df9f23;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: -3px 3px 0 #950707;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px;
+  }
+  
+  button:focus,
+  button:hover {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  button:active {
+    background-color: #950707;
+    color: #df9f23;
+  }
+  
+  footer {
+    background-color: #b72828;
+    padding: 5px 10px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer div {
+    background-color: #950707;
+    border-radius: 30px;
+    width: 65px;
+    height: 10px;
+  }
+  
+  footer p {
+    color: #e3c893;
+    font-family: Montserrat, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+    text-align: center;
+  }
+  
+  footer ul li {
+    background-color: #950707;
+    border-radius: 30px;
+    width: 15px;
+    height: 15px;
+  }

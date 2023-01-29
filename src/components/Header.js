@@ -10,8 +10,10 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import Typography from '@mui/material/Typography';
 
-const pages = ['people', 'things', 'contact'];
+const pages = ['me','people', 'things', 'contact'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -25,11 +27,25 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
+  const theme = createTheme();
+
+theme.typography.h3 = {
+  fontSize: '5.2rem',
+  '@media (min-width:600px)': {
+    fontSize: '5.5rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '2rem',
+  },
+};
+
+
 
   return (
-    <AppBar position="static">
+    <ThemeProvider theme={theme}>
+    <AppBar sx={{ bgcolor: '#10131F',mx:'auto'}} position="static">
       <Container maxWidth="xl">
-        <Toolbar sx={{ bgcolor: '#10131F' }} disableGutters>
+        <Toolbar sx={{ bgcolor: '#10131F',mx:'auto'}} disableGutters>
         
           <Typography
             variant="h6"
@@ -131,11 +147,12 @@ function ResponsiveAppBar() {
             href="https://www.instagram.com/pixbyhuynh/"
             sx={{ my: 2, color: 'white', display: 'block', fontSize: '15px', paddingInlineStart: 2 }}
           >
-            <InstagramIcon/>
+            <InstagramIcon sx={{ fontSize: '30px' }}/>
           </Button>
         </Toolbar>
       </Container>
     </AppBar>
+    </ThemeProvider>
   );
 }
 export default ResponsiveAppBar;
