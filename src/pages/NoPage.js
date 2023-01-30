@@ -1,10 +1,20 @@
 // 404 page design from https://codepen.io/genarocolusso/pen/XWbGMLp
 
 import React from 'react';
+import Button from '@mui/material/Button';
 import '../css/NoPages.css'
+import Header from '../components/Header'
 const NoPage = () => {
   return (
+
     <div className="main" style={{ display: 'flex', justifyContent: 'center' }}>
+      <Header/>
+      {/* <h2>Page Unavailable</h2> */}
+      <Button
+       variant="outlined"
+       href = '/'
+       disableElevation
+       >Return to Home</Button>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -90,8 +100,10 @@ const NoPage = () => {
             />
           </g>
         </g>
+        
       </svg>
       {/* <HomeButton /> */}
+      
     </div>
   );
 };

@@ -27,7 +27,8 @@ export default function Things() {
         sx={{
           mx:'auto',
           my: 'auto',
-          mt: '2%',
+          // mt: '25%',
+          // mb: '1',
           backgroundColor: "#10131F",
           display: "grid",
           overflowY: 'scroll',
@@ -43,7 +44,7 @@ export default function Things() {
             flexDirection: "column"
           },
           width: '85%',
-           height: '85%',
+           height: '95%',
            flexGrow: 1,
            flexWrap: 'nowrap'
         }}

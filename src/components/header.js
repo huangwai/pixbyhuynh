@@ -11,17 +11,13 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Slide from '@mui/material/Slide';
-// import PropTypes from 'prop-types';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
+import ScrollToHide from './ScrollToHide';
 
 
 const pages = ['me','people', 'things', 'contact'];
 
 
-
-function ResponsiveAppBar() {
-  const trigger = useScrollTrigger();
+export default function ResponsiveAppBar() {
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -36,25 +32,29 @@ function ResponsiveAppBar() {
 
   const theme = createTheme();
 
-theme.typography.h3 = {
-  fontSize: '5.2rem',
-  '@media (min-width:600px)': {
-    fontSize: '5.5rem',
-  },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '2rem',
-  },
-};
-// const trigger = useScrollTrigger();
+  theme.typography.h3 = {
+    fontSize: '1.2rem',
+    '@media (min-width:600px)': {
+      fontSize: '1.5rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '2rem',
+    },
+  };
   return (
     <ThemeProvider theme={theme}>
-    <Slide appear={false} direction="down" in={!trigger}>
-    <AppBar sx={{ bgcolor: '#10131F',mx:'auto'}} position="static">
+    <ScrollToHide threshold={0}>
+    <AppBar sx={{
+       bgcolor: '#10131F',
+       mx:'auto',
+       whiteSpace:'normal'
+       }} 
+       position="fixed">
       <Container maxWidth="xl">
         <Toolbar sx={{ bgcolor: '#10131F',mx:'auto'}} disableGutters>
         
           <Typography
-            variant="h6"
+            variant="h3"
             noWrap
             component="a"
             href="/"
@@ -80,6 +80,9 @@ theme.typography.h3 = {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx = {{
+                maxWidth: ''
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -107,7 +110,14 @@ theme.typography.h3 = {
                 href = {`/${page}`}
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{textAlign:'center', my: 2, color: 'black', display: 'block', fontSize: '15px', paddingInlineStart: 2 }}
+                sx={{
+                  textAlign:'center', 
+                  my: 2, 
+                  color: 'black', 
+                  display: 'block', 
+                  fontSize: '15px', 
+                  paddingInlineStart: 2,
+                 }}
               >
                   {page}
                 </Button>
@@ -116,7 +126,7 @@ theme.typography.h3 = {
             </Menu>
           </Box>
           <Typography
-            variant="h5"
+            variant="h3"
             noWrap
             component="a"
             href="/"
@@ -128,7 +138,7 @@ theme.typography.h3 = {
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
-              fontSize: '30px',
+              fontSize: '20px',
               textDecoration: 'none',
               
               pl: 2
@@ -153,15 +163,15 @@ theme.typography.h3 = {
             href="https://www.instagram.com/pixbyhuynh/"
             sx={{ my: 2, color: 'white', display: 'block', fontSize: '15px', paddingInlineStart: 2 }}
           >
-            <InstagramIcon sx={{ fontSize: '30px' }}/>
+            <InstagramIcon sx={{ fontSize: '25px' }}/>
           </Button>
         </Toolbar>
       </Container>
     </AppBar>
-    </Slide>
+    
+    </ScrollToHide>
     </ThemeProvider>
   );
 }
-export default ResponsiveAppBar;
 
 

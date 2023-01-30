@@ -21,15 +21,15 @@ const theme = createTheme({
 export default function Nyc() {
   return (
     <ThemeProvider theme={theme}>
-      <h1>Captial One HQ</h1>
-      <h3>Summer 2022</h3>
+      {/* <h1>Captial One HQ</h1> */}
+      {/* <h3>Summer 2022</h3> */}
       <Box
       gap = {2.5}
         sx={{
           mx:'auto',
           my: 'auto',
-          mt: '2%',
-          mb: '1',
+          // mt: '25%',
+          // mb: '1',
           backgroundColor: "#10131F",
           display: "grid",
           overflowY: 'scroll',
@@ -45,7 +45,7 @@ export default function Nyc() {
             flexDirection: "column"
           },
           width: '85%',
-           height: '85%',
+           height: '95%',
            flexGrow: 1,
            flexWrap: 'nowrap'
 

@@ -27,8 +27,8 @@ export default function Nyla() {
         sx={{
           mx:'auto',
           my: 'auto',
-          mt: '2%',
-          mb: '1',
+        //   mt: '25%',
+        //   mb: '1',
           backgroundColor: "#10131F",
           display: "grid",
           overflowY: 'scroll',
@@ -44,7 +44,7 @@ export default function Nyla() {
             flexDirection: "column"
           },
           width: '85%',
-           height: '85%',
+           height: '95%',
            flexGrow: 1,
            flexWrap: 'nowrap'
           

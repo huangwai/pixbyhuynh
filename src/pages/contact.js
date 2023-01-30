@@ -23,7 +23,7 @@ export const ContactForm = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '100px', color: '#FFFFFF' }}>
       <StyledContactForm>
-        <h1>Contact Us</h1>
+        <h1>Contact me</h1>
         <h4>Based in Chantilly, Virginia</h4>
         <br></br>
         <form ref={form} onSubmit={sendEmail}>
@@ -49,11 +49,12 @@ const StyledContactForm = styled.div`
     align-items: flex-start;
     flex-direction: column;
     width: 90%;
+    margin-left: 3%;
     font-size: 16px;
     color: #ffffff;
     input {
       width: 100%;
-      height: 35px;
+      height: 25px;
       padding: 7px;
       outline: none;
       border-radius: 5px;

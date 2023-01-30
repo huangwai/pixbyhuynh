@@ -1,45 +1,61 @@
 import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import ImageListItem from '@mui/material/ImageListItem';
-// import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import Button from '@mui/material/Button';
 import {
   createTheme,
-  responsiveFontSizes,
   ThemeProvider,
 } from '@mui/material/styles';
-
+import { Box } from '@mui/material';
+import imageListItemClasses from "@mui/material/ImageListItem";
 import '../css/fade.css';
+import FadeInSection from '../components/FadeInSection';
 
-let theme = createTheme();
-theme = responsiveFontSizes(theme);
 
-function FadeInSection(props) {
-  const [isVisible, setVisible] = React.useState(false);
-  const domRef = React.useRef();
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => setVisible(entry.isIntersecting));
-    });
-    observer.observe(domRef.current);
-  }, []);
-  return (
-    <div
-      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
-      ref={domRef}
-    >
-      {props.children}
-    </div>
-  );
-}
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      mobile: 0,
+      bigMobile: 350,
+      tablet: 650,
+      desktop: 900
+    }
+  }
+});
+
+
 
 export default function Home() {
+
   return (
     <ThemeProvider theme={theme}>
-    <ImageList
-     sx={{ mx: 'auto',my: 'auto',mt:5,width: '70%', height: '85%','&::-webkit-scrollbar': {display: 'none'} }} cols={2} gap={30} rowHeight={'auto'}>
+     <Box
+      gap = {2.5}
+        sx={{
+          mx:'auto',
+          my: 'auto',
+          // mt: '25%',
+          // mb: '1',
+          backgroundColor: "#10131F",
+          display: "grid",
+          overflowY: 'scroll',
+          '&::-webkit-scrollbar': {display: 'none'},
+          gridTemplateColumns: {
+            mobile: "repeat(1, 1fr)",
+            bigMobile: "repeat(1, 1fr)",
+            tablet: "repeat(2, 1fr)",
+            desktop: "repeat(3, 1fr)"
+          },
+          [`& .${imageListItemClasses.root}`]: {
+            display: "flex",
+            flexDirection: "column"
+          },
+          width: '85%',
+           height: '95%'
+          
+        }}
+      >
       {itemData.map((item) => (
         <FadeInSection key={item}>
         <ImageListItem sx={{
@@ -58,7 +74,8 @@ export default function Home() {
             // subtitle={item.author}
             actionIcon={
               <IconButton
-                sx={{ color: 'rgba(255, 255, 255)' }}
+                sx={{ color: 'rgba(255, 255, 255)',
+              whiteSpace:'normal' }}
                 aria-label={`info about ${item.title}`}
                 href={item.link}
               >
@@ -70,7 +87,8 @@ export default function Home() {
         </ImageListItem>
         </FadeInSection>
       ))}
-    </ImageList>
+    {/* </ImageList> */}
+    </Box>
     </ThemeProvider>
   );
 }
@@ -81,26 +99,15 @@ const itemData = [
     //Graduation pics
     img: '/images/grad_2022/_POG6308.jpg',
     title: 'VT Graduation 2022',
-    link: '/graduation'
+    link: '/graduation',
+    // subtitle: 'hi'
   },
-  //georgetown pics
-  // {
-  //   img: '/images/georgetown/_POG3510.jpg',
-  //   title: 'GeorgeTown',
-  //   link: '/georgetown'
-  // },
   //captial one pics
   {
     img: '../images/capone/_POG5450.jpg',
     title: 'Captial One HQ',
     link: '/captialone'
   },
-  //valentines day pics
-  // {
-  //   img: '../images/vday2022/_POG2197.jpg',
-  //   title: 'Valentines Day 2022',
-  //   link: '/valentines'
-  // },
   //steelwool pics here
   {
     img: '../images/stealwool/_POG5890.jpg',
