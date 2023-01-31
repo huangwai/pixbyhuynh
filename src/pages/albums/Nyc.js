@@ -18,6 +18,13 @@ const theme = createTheme({
   }
 });
 
+
+//HERE IS HOW WE PARSE THRU IMAGE FOLDER
+function importAll(r) {
+  return r.keys().map(r);
+}
+const images = importAll(require.context('./images/nyc', false, /\.(png|jpe?g|svg)$/));
+
 export default function Nyc() {
   return (
     <ThemeProvider theme={theme}>
@@ -28,8 +35,7 @@ export default function Nyc() {
         sx={{
           mx:'auto',
           my: 'auto',
-          // mt: '25%',
-          // mb: '1',
+  
           backgroundColor: "#10131F",
           display: "grid",
           overflowY: 'scroll',
@@ -53,17 +59,15 @@ export default function Nyc() {
         }}
         textAlign = 'center'
       >
-        {itemData.map((item) => (
+        {images.map((item) => (
         <FadeInSection key={item}>
-          <ImageListItem key={item.img}>
+          <ImageListItem key={item}>
             <img
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              alt={item.title}
+              src={`${item}?w=248&fit=crop&auto=format`}
+              srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              alt={item}
               loading="lazy"
             />
-            {/* <ImageListItem key={item.img} cols={item.cols || 1}>
-      <img src={item.img} alt={item.title} /> */}
           </ImageListItem>
           </FadeInSection>
         ))}
@@ -71,137 +75,3 @@ export default function Nyc() {
     </ThemeProvider>
   );
 }
-
-  
-    //List items below
-    const itemData = [
-      {
-      img: '../images/nyc/_DSC4325.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4341.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4359.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4361.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4406.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4447.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4450.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4503.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4512.jpg',
-      },
-      
-      {
-        img: '../images/nyc/_DSC4515.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4546.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4569.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4585.jpg',
-        
-      },
-      {
-        img: '../images/nyc/_DSC4609.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4613.jpg',
-        
-      },
-      {
-        img: '../images/nyc/_DSC4621.jpg',
-        
-      },
-      {
-        img: '../images/nyc/_DSC4638.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4640.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4657.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4673.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4686.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4687.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4696.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4706.jpg',
-        
-      },
-      {
-        img: '../images/nyc/_DSC4708.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4715.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4750.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4770.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4784.jpg',
-      },
-      {
-        img: '../images/nyc/_DSC4826.jpg',
-      },
-      {
-        img: '../images/nyc/IMG_7810.jpg',
-      },
-      {
-        img: '../images/nyc/IMG_7823.jpg',
-      },
-      {
-        img: '../images/nyc/IMG_7819.jpg',
-      },
-      {
-        img: '../images/nyc/IMG_7830.jpg',
-      },
-      {
-        img: '../images/nyc/IMG_7862.jpg',
-      },
-      {
-        img: '../images/nyc/IMG_7829.jpg',
-      },
-      {
-        img: '../images/nyc/IMG_7862.jpg',
-      },
-      {
-        img: '../images/nyc/IMG_7864.jpg',
-      },
-      {
-        img: '../images/nyc/IMG_7865.jpg',
-      },
-      {
-        img: '../images/nyc/IMG_7872.jpg',
-      },
-      {
-        img: '../images/nyc/IMG_7874.jpg',
-      },
-
-    ];

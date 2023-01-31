@@ -81,7 +81,7 @@ export default function ResponsiveAppBar() {
               onClick={handleOpenNavMenu}
               color="inherit"
               sx = {{
-                maxWidth: ''
+                // maxWidth: ''
               }}
             >
               <MenuIcon />

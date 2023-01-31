@@ -1,89 +1,62 @@
-import React from 'react';
-import { Box, Container, Row, Column, FooterLink} from '../css/FooterStyles';
-import "../css/FooterStyles2.css";
+import * as React from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
 
-const Footer = () => {
+function Copyright() {
   return (
-    <Box>
-      <h1 style={{ color: 'White', textAlign: 'center', marginTop: '-50px' }}>POWOW</h1>
-      <Container>
-        <Row>
-          <Column>
-            <FooterLink href="/">Home</FooterLink>
-          </Column>
-          <Column>
-            {/* <Heading>Chat</Heading> */}
-            <FooterLink href="/people">About</FooterLink>
-            {/* <FooterLink href="createRoom">Create Room</FooterLink>
-            <FooterLink href="publicChat">Start Chatting</FooterLink> */}
-          </Column>
-          <Column>
-            {/* <Heading>Contact Us</Heading> */}
-            <FooterLink href="/things">Things</FooterLink>
-          </Column>
-          <Column>
-            {/* <Heading>Social Media</Heading> */}
-            <FooterLink href="/contact">Contact</FooterLink>
+    <Typography variant="body2" color="text.secondary">
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
-            {/* <i className="fab fa-facebook-f">
-                <span style={{ marginLeft: '10px' }}>Facebook</span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-instagram">
-                <span style={{ marginLeft: '10px' }}>Instagram</span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-twitter">
-                <span style={{ marginLeft: '10px' }}>Twitter</span>
-              </i>
-            </FooterLink>
-            <FooterLink href="#">
-              <i className="fab fa-youtube">
-                <span style={{ marginLeft: '10px' }}>Youtube</span>
-              </i>
-            </FooterLink> */}
-          </Column>
-        </Row>
+export default function Footer() {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+      }}
+    >
+      <CssBaseline />
+      <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
+        <Typography variant="h2" component="h1" gutterBottom>
+          Sticky footer
+        </Typography>
+        <Typography variant="h5" component="h2" gutterBottom>
+          {'Pin a footer to the bottom of the viewport.'}
+          {'The footer will move as the main element of the page grows.'}
+        </Typography>
+        <Typography variant="body1">Sticky footer placeholder.</Typography>
       </Container>
+      <Box
+        component="footer"
+        sx={{
+          py: 3,
+          px: 2,
+          mt: 'auto',
+          backgroundColor: (theme) =>
+            theme.palette.mode === 'light'
+              ? theme.palette.grey[200]
+              : theme.palette.grey[800],
+        }}
+      >
+        <Container maxWidth="sm">
+          <Typography variant="body1">
+            My sticky footer can be found here.
+          </Typography>
+          <Copyright />
+        </Container>
+      </Box>
     </Box>
   );
-};
-export default Footer;
-
-// src/componetns/Footer.tsx
-
-// import React, { FC, ReactElement } from "react";
-// import { Box, Container, Grid, Typography } from "@mui/material";
-
-// export const Footer: FC = (): ReactElement => {
-//   return (
-//     <Box
-//       sx={{
-//         width: "100%",
-//         height: "auto",
-//         backgroundColor: "secondary.main",
-//         paddingTop: "1rem",
-//         paddingBottom: "1rem",
-//       }}
-//     >
-//       <Container maxWidth="lg">
-//         <Grid container direction="column" alignItems="center">
-//           <Grid item xs={12}>
-//             <Typography color="black" variant="h5">
-//               React Starter App
-//             </Typography>
-//           </Grid>
-//           <Grid item xs={12}>
-//             <Typography color="textSecondary" variant="subtitle1">
-//               {`${new Date().getFullYear()} | React | Material UI | React Router`}
-//             </Typography>
-//           </Grid>
-//         </Grid>
-//       </Container>
-//     </Box>
-//   );
-// };
-
-// export default Footer;
+}

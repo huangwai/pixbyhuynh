@@ -5,6 +5,7 @@ import ImageListItem, {
   imageListItemClasses
 } from "@mui/material/ImageListItem";
 import FadeInSection from '../../components/FadeInSection';
+// import Typography from '@mui/material/Typography';
 
 const theme = createTheme({
   breakpoints: {
@@ -17,9 +18,37 @@ const theme = createTheme({
   }
 });
 
+
+//HERE IS HOW WE PARSE THRU IMAGE FOLDER
+function importAll(r) {
+  return r.keys().map(r);
+}
+const images = importAll(require.context('./images/imgSteelWool', false, /\.(png|jpe?g|svg)$/));
+
+
 export default function SteelWool() {
   return (
     <ThemeProvider theme={theme}>
+      {/* <Typography
+            variant="subject1"
+            noWrap
+            component="a"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              fontSize: '20px',
+              textDecoration: 'none',
+              px: '100%',
+              pl: '10%',
+            }}
+          >
+            Steel Wool
+          </Typography> */}
       {/* <h1>Steel Wool</h1> */}
       {/* <h3>September 16th, 2022</h3> */}
       <Box
@@ -28,8 +57,7 @@ export default function SteelWool() {
         sx={{
           mx:'auto',
           my: 'auto',
-          // mt: '25%',
-          // mb: '1',
+
           backgroundColor: "#10131F",
           display: "grid",
           overflowY: 'scroll',
@@ -53,13 +81,13 @@ export default function SteelWool() {
         }}
         textAlign = 'center'
       >
-        {itemData.map((item) => (
+        {images.map((item) => (
           <FadeInSection key={item}>
-          <ImageListItem key={item.img}>
+          <ImageListItem key={item}>
             <img
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              alt={item.title}
+              src={`${item}?w=248&fit=crop&auto=format`}
+              srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              alt={item}
               loading="lazy"
             />
             {/* <ImageListItem key={item.img} cols={item.cols || 1}>
@@ -71,41 +99,3 @@ export default function SteelWool() {
     </ThemeProvider>
   );
 }
-
-  
-    //List items below
-    const itemData = [
-      {
-      img: '../images/stealwool/_POG5887.jpg',
-      },
-      {
-        img: '../images/stealwool/_POG5888.jpg',
-      },
-      {
-        img: '../images/stealwool/_POG5889.jpg',
-      },
-      {
-        img: '../images/stealwool/_POG5890.jpg',
-      },
-      {
-        img: '../images/stealwool/_POG5892.jpg',
-      },
-      {
-        img: '../images/stealwool/_POG5894.jpg',
-      },
-
-      {
-        img: '../images/stealwool/_POG5901.jpg',
-      },
-      {
-        img: '../images/stealwool/_POG5902.jpg',
-      },
-      {
-        img: '../images/stealwool/_POG5903.jpg',
-      },
-      
-      {
-        img: '../images/stealwool/_POG5905.jpg',
-      },
-      
-    ];

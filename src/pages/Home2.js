@@ -5,47 +5,46 @@ import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
 // import FadeInSection from '../components/FadeInSection';
 const images = [
+    {
+        url: '../images/albumcovers/number2.png',
+        title: '<3',
+        link: '/miju'
+      },
   {
-    url: '/images/grad_2022/_POG6308.jpg',
+    url: '/images/albumcovers/_POG6308.jpg',
     title: 'VT Graduation 2022',
-    // width: '30%',
     link:'/graduation'
   },
   {
-    url: '../images/capone/_POG5450.jpg',
+    url: '../images/albumcovers/cap1.png',
     title: 'Captial One HQ',
-    // width: '30%',
     link:'/captialone'
   },
   {
-    url: '../images/stealwool/_POG5890.jpg',
+    url: '../images/albumcovers/rings.png',
     title: 'Steel Wool',
-    // width: '30%',
     link:'steelwool'
   },
   {
-    url: '../images/perryStGarage/_DSC0949.jpg',
+    url: '../images/albumcovers/pst.png',
     title: 'Perry St Garage',
-    // width: '30%',
     link: 'perrystreet'
   },
   {
-    url: '../images/nyc/_DSC4715.jpg',
+    url: '../images/albumcovers/_DSC4715.jpg',
     title: 'New York City',
-    // width: '30%',
     link: '/nyc'
   },
   {
-    url: '../images/nyla/_POG3561.jpg',
+    url: '../images/albumcovers/_POG3561.jpg',
     title: 'Nyla',
-    // width: '30%',
     link: '/nyla'
   },
 ];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
-  height: 200,
+  height: 250,
   [theme.breakpoints.down('sm')]: {
     width: '100% !important', // Overrides inline-style
     height: 100,
@@ -58,9 +57,9 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
     '& .MuiImageMarked-root': {
       opacity: 0,
     },
-    '& .MuiTypography-root': {
-      border: '4px solid currentColor',
-    },
+    // '& .MuiTypography-root': {
+    //   border: '4px solid currentColor',
+    // },
   },
 }));
 
@@ -71,7 +70,7 @@ const ImageSrc = styled('span')({
   top: 0,
   bottom: 0,
   backgroundSize: 'cover',
-  backgroundPosition: 'center 45%',
+  backgroundPosition: 'center 40%',
 });
 
 const Image = styled('span')(({ theme }) => ({
@@ -83,7 +82,7 @@ const Image = styled('span')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: theme.palette.common.white,
+   color: theme.palette.common.white,
 }));
 
 const ImageBackdrop = styled('span')(({ theme }) => ({
@@ -120,21 +119,26 @@ export default function ButtonBases() {
           key={image.title}
           style={{
             width: '100%',
+            border:'none'
           }}
           href={image.link}
         >
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
 
-          <Image>
+          <Image
+          loading="lazy">
             <Typography
               component="span"
               variant="subtitle1"
               color="inherit"
+              outline= "none"
+              border = 'none'
               sx={{
                 position: 'relative',
                 p: 4,
                 pt: 2,
+                outline: 'none',
                 pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
               }}
             >

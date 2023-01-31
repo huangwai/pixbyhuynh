@@ -18,6 +18,12 @@ const theme = createTheme({
   }
 });
 
+//HERE IS HOW WE PARSE THRU IMAGE FOLDER
+function importAll(r) {
+  return r.keys().map(r);
+}
+const images = importAll(require.context('./images/perryStGarage', false, /\.(png|jpe?g|svg)$/));
+
 export default function PerrySt() {
   return (
     <ThemeProvider theme={theme}>
@@ -53,17 +59,15 @@ export default function PerrySt() {
         }}
         textAlign = 'center'
       >
-        {itemData.map((item) => (
+        {images.map((item) => (
         <FadeInSection key={item}>
-          <ImageListItem key={item.img}>
+          <ImageListItem key={item}>
             <img
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              alt={item.title}
+              src={`${item}?w=248&fit=crop&auto=format`}
+              srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              alt={item}
               loading="lazy"
             />
-            {/* <ImageListItem key={item.img} cols={item.cols || 1}>
-      <img src={item.img} alt={item.title} /> */}
           </ImageListItem>
           </FadeInSection>
         ))}
@@ -71,43 +75,4 @@ export default function PerrySt() {
     </ThemeProvider>
   );
 }
-    
-    const itemData = [
-      {
-        img: '../images/perryStGarage/_DSC0684.jpg',
-      },
-      {
-        img: '../images/perryStGarage/_DSC0869.jpg',
-      },
-      {
-        img: '../images/perryStGarage/_DSC0949.jpg',
-      },
-      {
-        img: '../images/perryStGarage/_DSC0253.jpg',
-      },
-      {
-        img: '../images/perryStGarage/_DSC1059.jpg',
-      },
-      {
-        img: '../images/perryStGarage/_DSC1066.jpg',
-      },
-      {
-        img: '../images/perryStGarage/_DSC1126.jpg',
-      },
-      {
-        img: '../images/perryStGarage/_DSC1138.jpg',
-      },
-      {
-        img: '../images/perryStGarage/_DSC1150.jpg',
-      },
-      {
-        img: '../images/perryStGarage/_DSC9419.jpg',
-      },
-      {
-        img: '../images/perryStGarage/_DSC9443.jpg',
-      },
-      {
-        img: '../images/perryStGarage/_DSC9508.jpg',
-      },
-    ];
     

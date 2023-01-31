@@ -14,9 +14,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import ScrollToHide from './ScrollToHide';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['me', 'people', 'things','contact'];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -29,13 +31,35 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Jimmy Huynh
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+          <ListItem
+           key={item} 
+           disablePadding
+           href = {`/${item}`}
+           sx={{
+            textAlign:'center', 
+            my: 2, 
+            color: 'black', 
+            display: 'block', 
+            fontSize: '15px', 
+            paddingInlineStart: 2,
+           }}>
+            <ListItemButton
+            href = {`/${item}`}
+            sx={{
+              textAlign:'center', 
+              my: 2, 
+              color: 'black', 
+              display: 'block', 
+              fontSize: '15px', 
+              paddingInlineStart: 2,
+              // mr: 'auto',
+              // ml: 'auto'
+             }}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -49,9 +73,18 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar>
+      <ScrollToHide threshold={0}>
+      <AppBar
+       sx = {{
+        bgcolor: '#10131F',
+       mx:'auto',
+       whiteSpace:'normal'
+       }}
+       component="nav"
+       position="fixed">
+        <Toolbar sx={{ bgcolor: '#10131F',mx:'auto'}} disableGutters>
           <IconButton
+            size ="large"
             color="inherit"
             aria-label="open drawer"
             edge="start"
@@ -61,21 +94,43 @@ function DrawerAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            variant="h3"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              fontSize: '30px',
+              textDecoration: 'none',
+            }}
           >
-            MUI
+            Jimmy Huynh
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ bgcolor: '#10131F',flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button
+               key={item}
+                sx={{ color: '#fff' }}
+                href = {`/${item}`}
+                >
                 {item}
               </Button>
             ))}
           </Box>
+          <Button
+            href="https://www.instagram.com/pixbyhuynh/"
+            sx={{ my: 2, color: 'white', display: 'block', fontSize: '15px', paddingInlineStart: 2 }}
+          >
+            <InstagramIcon sx={{ fontSize: '25px' }}/>
+          </Button>
         </Toolbar>
       </AppBar>
+      </ScrollToHide>
       <Box component="nav">
         <Drawer
           container={container}
@@ -92,6 +147,7 @@ function DrawerAppBar(props) {
         >
           {drawer}
         </Drawer>
+        
       </Box>
     </Box>
   );
