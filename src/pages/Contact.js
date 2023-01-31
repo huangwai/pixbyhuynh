@@ -36,7 +36,7 @@ export const ContactForm = () => {
               pl: '25%',
               // ml: '23%',
               // px: 'auto',
-              display: { xs: 'block', md: 'flex' },
+              display: { xs: 'flex', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',

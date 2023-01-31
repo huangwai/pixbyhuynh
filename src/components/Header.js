@@ -13,34 +13,34 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ScrollToHide from './ScrollToHide';
 // import AdbIcon from '@mui/icons-material/Adb';
-import Tooltip from '@mui/material/Tooltip';
+// import Tooltip from '@mui/material/Tooltip';
 // import Avatar from '@mui/material/Avatar';
 
 
 
 const pages = ['me','people', 'things', 'contact'];
-const settings = ['miju', 'graduation', 'captialone', 'steelwool','perrystreet','nyc','nyla'];
+// const settings = ['miju', 'graduation', 'captialone', 'steelwool','perrystreet','nyc','nyla'];
 
 export default function ResponsiveAppBar() {
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+  // };
 
   const theme = createTheme();
 
@@ -174,7 +174,7 @@ export default function ResponsiveAppBar() {
           </Box>
 
           {/* HERE WE DEAL WITH EXTRA TABS */}
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
             <Button 
             variant="text" 
@@ -225,7 +225,7 @@ export default function ResponsiveAppBar() {
               </Button>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
           <Button
             href="https://www.instagram.com/pixbyhuynh/"
             sx={{ my: 2, color: 'white', display: 'block', fontSize: '15px', paddingInlineStart: 2 }}
