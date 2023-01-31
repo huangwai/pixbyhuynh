@@ -43,8 +43,8 @@ export default function Things() {
           gridTemplateColumns: {
             mobile: "repeat(1, 1fr)",
             bigMobile: "repeat(1, 1fr)",
-            tablet: "repeat(2, 1fr)",
-            desktop: "repeat(3, 1fr)"
+            tablet: "repeat(1, 1fr)",
+            desktop: "repeat(2, 1fr)"
           },
           [`& .${imageListItemClasses.root}`]: {
             display: "flex",
@@ -59,9 +59,9 @@ export default function Things() {
       >
         {images.map((item) => (
           <FadeInSection key={item}>
-          <ImageListItem key={item} 
-          // cols={item.cols || 1} rows={item.rows || 1}
-          >
+           <ImageListItem key={item}
+          sx={{ maxWidth: '500px', maxHeight: '700px', mx:'auto', my:'auto' }}>
+          {/* // cols={item.cols || 1} rows={item.rows || 1} */}
             <img
               src={`${item}?w=248&fit=crop&auto=format`}
               srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}

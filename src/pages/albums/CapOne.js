@@ -24,7 +24,7 @@ function importAll(r) {
 }
 const images = importAll(require.context('./images/capone', false, /\.(png|jpe?g|svg)$/));
 
-export default function Nyc() {
+export default function CapOne() {
   return (
     <ThemeProvider theme={theme}>
       {/* <h1>Captial One HQ</h1> */}
@@ -32,6 +32,7 @@ export default function Nyc() {
       <Box
       gap = {2.5}
         sx={{
+          // maxHeight: '10',
           mx:'auto',
           my: 'auto',
           // mt: '25%',
@@ -43,8 +44,8 @@ export default function Nyc() {
           gridTemplateColumns: {
             mobile: "repeat(1, 1fr)",
             bigMobile: "repeat(1, 1fr)",
-            tablet: "repeat(2, 1fr)",
-            desktop: "repeat(3, 1fr)"
+            tablet: "repeat(1, 1fr)",
+            desktop: "repeat(2, 1fr)"
           },
           [`& .${imageListItemClasses.root}`]: {
             display: "flex",
@@ -61,7 +62,8 @@ export default function Nyc() {
       >
         {images.map((item) => (
          <FadeInSection key={item}>
-          <ImageListItem key={item}>
+          <ImageListItem key={item}
+          sx={{ maxWidth: '500px', maxHeight: '700px', mx:'auto', my:'auto' }}>
             <img
               src={`${item}?w=248&fit=crop&auto=format`}
               srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}

@@ -43,8 +43,8 @@ export default function Nyc() {
           gridTemplateColumns: {
             mobile: "repeat(1, 1fr)",
             bigMobile: "repeat(1, 1fr)",
-            tablet: "repeat(2, 1fr)",
-            desktop: "repeat(3, 1fr)"
+            tablet: "repeat(1, 1fr)",
+            desktop: "repeat(2, 1fr)"
           },
           [`& .${imageListItemClasses.root}`]: {
             display: "flex",
@@ -61,7 +61,8 @@ export default function Nyc() {
       >
         {images.map((item) => (
         <FadeInSection key={item}>
-          <ImageListItem key={item}>
+           <ImageListItem key={item}
+          sx={{ maxWidth: '5s00px', maxHeight: '700px', mx:'auto', my:'auto' }}>
             <img
               src={`${item}?w=248&fit=crop&auto=format`}
               srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}
