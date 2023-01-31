@@ -12,22 +12,34 @@ import MenuItem from '@mui/material/MenuItem';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ScrollToHide from './ScrollToHide';
+// import AdbIcon from '@mui/icons-material/Adb';
+import Tooltip from '@mui/material/Tooltip';
+// import Avatar from '@mui/material/Avatar';
+
 
 
 const pages = ['me','people', 'things', 'contact'];
-
+const settings = ['miju', 'graduation', 'captialone', 'steelwool','perrystreet','nyc','nyla'];
 
 export default function ResponsiveAppBar() {
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
   };
 
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
   };
 
   const theme = createTheme();
@@ -86,6 +98,8 @@ export default function ResponsiveAppBar() {
             >
               <MenuIcon />
             </IconButton>
+
+            {/* MENU WHEN MINIMAL */}
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -159,6 +173,59 @@ export default function ResponsiveAppBar() {
             ))}
           </Box>
 
+          {/* HERE WE DEAL WITH EXTRA TABS */}
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+            <Button 
+            variant="text" 
+            onClick={handleOpenUserMenu} 
+            sx={{
+              textAlign:'center', 
+              my: 2, 
+              color: 'white', 
+              display: 'block', 
+              fontSize: '15px', 
+              paddingInlineStart: 2,
+             }}
+            >
+              Explore more...
+            </Button>
+            </Tooltip>
+            <Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting) => (
+                <Button
+                href = {`/${setting}`}
+                key={setting}
+                onClick={handleCloseNavMenu}
+                sx={{
+                  textAlign:'center', 
+                  my: 2, 
+                  color: 'black', 
+                  display: 'block', 
+                  fontSize: '15px', 
+                  paddingInlineStart: 2,
+                 }}
+              >
+                {setting}
+              </Button>
+              ))}
+            </Menu>
+          </Box>
           <Button
             href="https://www.instagram.com/pixbyhuynh/"
             sx={{ my: 2, color: 'white', display: 'block', fontSize: '15px', paddingInlineStart: 2 }}
