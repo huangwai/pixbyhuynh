@@ -16,6 +16,7 @@ import Nyc from './pages/albums/Nyc';
 import Nyla from './pages/albums/Nyla';
 import ButtonBases from './pages/Home2';
 import Miju from './pages/albums/Miju';
+import Huangmemes from './pages/albums/Huangmemes';
 // import BottomNav from './components/BottomNav';
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
 
           {/* If page not found below */}
           <Route exact path="/*" element={<NoPage />} />
+          <Route exact path="/huangwai" element={<Huangmemes />} />
         </Routes>
         </div>
     {/* <Footer/> */}
