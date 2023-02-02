@@ -29,8 +29,8 @@ const images = importAll(require.context('./images/imgSteelWool', false, /\.(png
 export default function SteelWool() {
   return (
     <ThemeProvider theme={theme}>
-      {/* <Typography
-            variant="subject1"
+       {/* <Typography
+            variant="subject1"/miju
             noWrap
             component="a"
             sx={{
@@ -43,8 +43,8 @@ export default function SteelWool() {
               color: 'inherit',
               fontSize: '20px',
               textDecoration: 'none',
-              px: '100%',
-              pl: '10%',
+              // py: '100%',
+              // pl: '0%',
             }}
           >
             Steel Wool

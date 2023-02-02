@@ -42,8 +42,8 @@ export default function Nyla() {
           gridTemplateColumns: {
             mobile: "repeat(1, 1fr)",
             bigMobile: "repeat(1, 1fr)",
-            tablet: "repeat(2, 1fr)",
-            desktop: "repeat(3, 1fr)"
+            tablet: "repeat(1, 1fr)",
+            desktop: "repeat(2, 1fr)"
           },
           [`& .${imageListItemClasses.root}`]: {
             display: "flex",
