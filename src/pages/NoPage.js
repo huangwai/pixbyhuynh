@@ -8,7 +8,7 @@ import { Box } from '@mui/material';
 const NoPage = () => {
   return (
     <Box
-    gap = {2.5}
+    gap = {3.5}
         sx={{
           mx:'auto',
           my: 'auto',
@@ -26,7 +26,9 @@ const NoPage = () => {
             desktop: "repeat(2, 1fr)"
           },
           width: 'auto',
-           height: 'auto'
+           height: 'auto',
+           margin: 'auto',
+           padding: 'center'
           
         }}
     >
@@ -36,8 +38,10 @@ const NoPage = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        width={470}
-        height={290}
+        width= '75%'
+        height='75%'
+        margin = 'auto'
+        padding = 'auto'
         viewBox="0 0 470 290"
       >
         <defs>
@@ -125,8 +129,9 @@ const NoPage = () => {
        href = '/'
        disableElevation
        sx = {{
-        margin: 'center',
-        width: '50%'
+        margin: 'auto',
+        width: '40%',
+        padding: '1%'
        }}
        >Return to Home
        </Button>
