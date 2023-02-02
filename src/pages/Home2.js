@@ -36,6 +36,8 @@ const images = [
     link: '/nyc'
   },
   {
+    // ../images/albumcovers/heroimg.jpg
+    // url: '../images/albumcovers/heroimg.png',
     url: '../images/albumcovers/_POG2130.jpg',
     title: 'Nyla',
     link: '/nyla'
@@ -111,8 +113,16 @@ const ImageMarked = styled('span')(({ theme }) => ({
 export default function ButtonBases() {
   return (
     // <FadeInSection key={image}>
-
     <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: 'auto' }}>
+      {/* <img
+        src={`../images/albumcovers/heroimg2.jpg?w=164&h=164&fit=crop&auto=format`}
+        srcSet={`../images/albumcovers/heroimg2.jpg?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+        alt={"Hero Image"}
+        height = 'auto'
+        width = 'auto'
+        margin = 'auto'
+        loading="lazy"
+      /> */}
       {images.map((image) => (
         <ImageButton
           focusRipple
