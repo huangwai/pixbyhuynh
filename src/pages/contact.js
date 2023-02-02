@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import styled from 'styled-components';
 import Typography from '@mui/material/Typography';
-
+import { Box } from '@mui/material';
 export const ContactForm = () => {
   const form = useRef();
 
@@ -23,6 +23,28 @@ export const ContactForm = () => {
 
   return (
     // <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '100px', color: '#FFFFFF' }}>
+    <Box
+    gap = {2.5}
+        sx={{
+          mx:'auto',
+          my: 'auto',
+          // mt: '25%',
+          // mb: '1',
+          backgroundColor: "#10131F",
+          display: "grid",
+          overflowY: 'scroll',
+          '&::-webkit-scrollbar': {display: 'none'},
+          gridTemplateColumns: {
+            mobile: "repeat(1, 1fr)",
+            bigMobile: "repeat(1, 1fr)",
+            tablet: "repeat(1, 1fr)",
+            desktop: "repeat(2, 1fr)"
+          },
+          width: '85%',
+           height: '95%'
+          
+        }}
+    >
       <StyledContactForm>
       <Typography
             align="center"
@@ -62,7 +84,8 @@ export const ContactForm = () => {
           <input type="submit" value="Send" />
         </form>
       </StyledContactForm>
-    // </div>
+    {/* // </div> */}
+    </Box>
   );
 };
 

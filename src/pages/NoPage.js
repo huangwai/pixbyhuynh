@@ -3,18 +3,36 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import '../css/NoPages.css'
-import Header from '../components/Header'
+// import Header from '../components/Header'
+import { Box } from '@mui/material';
 const NoPage = () => {
   return (
-
-    <div className="main" style={{ display: 'flex', justifyContent: 'center' }}>
-      <Header/>
+    <Box
+    gap = {2.5}
+        sx={{
+          mx:'auto',
+          my: 'auto',
+          // mt: '25%',
+          // mb: '1',
+          alignItems: 'center',
+          backgroundColor: "#10131F",
+          display: "grid",
+          overflowY: 'scroll',
+          '&::-webkit-scrollbar': {display: 'none'},
+          gridTemplateColumns: {
+            mobile: "repeat(1, 1fr)",
+            bigMobile: "repeat(1, 1fr)",
+            tablet: "repeat(1, 1fr)",
+            desktop: "repeat(2, 1fr)"
+          },
+          width: 'auto',
+           height: 'auto'
+          
+        }}
+    >
+    {/* // <div className="main" style={{ display: 'flex', justifyContent: 'center' }}> */}
+      {/* <Header/> */}
       {/* <h2>Page Unavailable</h2> */}
-      <Button
-       variant="outlined"
-       href = '/'
-       disableElevation
-       >Return to Home</Button>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -102,9 +120,18 @@ const NoPage = () => {
         </g>
         
       </svg>
-      {/* <HomeButton /> */}
-      
-    </div>
+      <Button
+       variant="outlined"
+       href = '/'
+       disableElevation
+       sx = {{
+        margin: 'center',
+        width: '50%'
+       }}
+       >Return to Home
+       </Button>
+     {/* </div> */}
+    </Box>
   );
 };
 export default NoPage;

@@ -36,7 +36,7 @@ const images = [
     link: '/nyc'
   },
   {
-    url: '../images/albumcovers/_POG3561.jpg',
+    url: '../images/albumcovers/_POG2130.jpg',
     title: 'Nyla',
     link: '/nyla'
   },

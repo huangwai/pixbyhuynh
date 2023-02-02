@@ -7,7 +7,8 @@
 
 # How to run in local environment
 1. Open project in IDE.
-2. cd into src directory of project
-3. run npm start to deploy to localhost
-4. automatically takes you to the local website
-5. ctrl/cmd(if using windows) + C to kill server
+2. <cd> into src directory of project
+3. run <npm install>
+4. run <npm start> to deploy to localhost
+5. automatically takes you to the local website
+6. <ctrl/cmd(if using windows) + C> to kill server

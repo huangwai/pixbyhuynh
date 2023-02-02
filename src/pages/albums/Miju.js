@@ -62,7 +62,8 @@ export default function Miju() {
         {images.map((item) => (
         <FadeInSection key={item}>
            <ImageListItem key={item}
-          sx={{ maxWidth: '500px', maxHeight: '700px', mx:'auto', my:'auto' }}>
+          // sx={{ maxWidth: '500px', maxHeight: '700px', mx:'auto', my:'auto' }}
+          >
             <img
               src={`${item}?w=248&fit=crop&auto=format`}
               srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}
