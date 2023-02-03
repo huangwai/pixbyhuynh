@@ -5,6 +5,7 @@ import ImageListItem, {
   imageListItemClasses
 } from "@mui/material/ImageListItem";
 import FadeInSection from '../../components/FadeInSection';
+import { Typography } from '@mui/material';
 
 const theme = createTheme({
   breakpoints: {
@@ -26,6 +27,27 @@ function importAll(r) {
 export default function Nyla() {
   return (
     <ThemeProvider theme={theme}>
+      <Typography
+            variant="subject1"
+            noWrap
+            component="a"
+            sx={{
+              mx: 'auto',
+              mb: '.5%',
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              fontSize: '20px',
+              textDecoration: 'none',
+              // py: '100%',
+              // pl: '0%',
+            }}
+          >
+            Nyla
+          </Typography>
       {/* <h1>New York City</h1> */}
       {/* <h3>Summer 2021</h3> */}
       <Box
@@ -33,6 +55,7 @@ export default function Nyla() {
         sx={{
           mx:'auto',
           my: 'auto',
+          // mb: 'auto',
           // mt: '25%',
           // mb: '1',
           backgroundColor: "#10131F",

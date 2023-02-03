@@ -3,7 +3,8 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
-// import FadeInSection from '../components/FadeInSection';
+import FadeInSection from '../components/FadeInSection';
+// import Hero from './albums/Home';
 const images = [
     {
         url: '../images/albumcovers/number2.png',
@@ -110,10 +111,12 @@ const ImageMarked = styled('span')(({ theme }) => ({
 
 
 
-export default function ButtonBases() {
+export default function Album() {
   return (
     // <FadeInSection key={image}>
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: 'auto' }}>
+    <Box
+    // className='album' 
+    sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: 'auto' }}>
       {/* <img
         src={`../images/albumcovers/heroimg2.jpg?w=164&h=164&fit=crop&auto=format`}
         srcSet={`../images/albumcovers/heroimg2.jpg?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
@@ -133,14 +136,17 @@ export default function ButtonBases() {
           }}
           href={image.link}
         >
+
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
+
           <ImageBackdrop className="MuiImageBackdrop-root" />
 
           <Image
           loading="lazy">
+            <FadeInSection key={image}>
             <Typography
               component="span"
-              variant="subtitle1"
+              variant="h6"
               color="inherit"
               outline= "none"
               border = 'none'
@@ -152,13 +158,17 @@ export default function ButtonBases() {
                 pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
               }}
             >
+                        
+
               {image.title}
               <ImageMarked className="MuiImageMarked-root" />
+
             </Typography>
+            </FadeInSection>
+
           </Image>
 
         </ImageButton>
-        // </FadeInSection>
 
       ))}
     </Box>

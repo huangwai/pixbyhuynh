@@ -14,10 +14,11 @@ import SteelWool from './pages/albums/SteelW';
 import Me from './pages/albums/Me';
 import Nyc from './pages/albums/Nyc';
 import Nyla from './pages/albums/Nyla';
-import ButtonBases from './pages/Home2';
 import Miju from './pages/albums/Miju';
 import Huangmemes from './pages/albums/Huangmemes';
-// import BottomNav from './components/BottomNav';
+// import Hero from './pages/albums/Home';
+import Album from './pages/Album';
+// import Home from './pages/albums/Home';
 function App() {
   return (
     <div className="App">
@@ -26,7 +27,7 @@ function App() {
     <div style ={{marginTop: 90, marginBottom: 90}}>
         <Routes>
           {/* home page */}
-          <Route exact path="/" element={<ButtonBases/>} />
+          <Route exact path="/" element={<Album/>} />
 
           {/* header links */}
           <Route exact path="/me" element={<Me />} />
@@ -42,11 +43,14 @@ function App() {
           <Route exact path="/nyc" element={<Nyc />} />
           <Route exact path="/nyla" element={<Nyla />} />
           <Route exact path="/miju" element={<Miju />} />
+          {/* <Route exact path="/albums" element={<Album />} /> */}
           {/* <Route exact path="/home2" element={<ButtonBases />} /> */}
 
           {/* If page not found below */}
           <Route exact path="/*" element={<NoPage />} />
           <Route exact path="/huangwai" element={<Huangmemes />} />
+          {/* <Route exact path="/hero" element={<Hero />} /> */}
+
         </Routes>
         </div>
     {/* <Footer/> */}

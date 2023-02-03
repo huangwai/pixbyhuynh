@@ -5,7 +5,7 @@ import ImageListItem, {
   imageListItemClasses
 } from "@mui/material/ImageListItem";
 import FadeInSection from '../../components/FadeInSection';
-// import Typography from '@mui/material/Typography';
+import Typography from '@mui/material/Typography';
 
 const theme = createTheme({
   breakpoints: {
@@ -29,12 +29,13 @@ const images = importAll(require.context('./images/imgSteelWool', false, /\.(png
 export default function SteelWool() {
   return (
     <ThemeProvider theme={theme}>
-       {/* <Typography
-            variant="subject1"/miju
+       <Typography
+            variant="subject1"
             noWrap
             component="a"
             sx={{
-              mr: 2,
+              mx: 'auto',
+              mb: '.5%',
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
               fontFamily: 'monospace',
@@ -48,7 +49,7 @@ export default function SteelWool() {
             }}
           >
             Steel Wool
-          </Typography> */}
+          </Typography>
       {/* <h1>Steel Wool</h1> */}
       {/* <h3>September 16th, 2022</h3> */}
       <Box

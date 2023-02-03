@@ -76,9 +76,9 @@ export const ContactForm = () => {
         <br></br>
         <form ref={form} onSubmit={sendEmail}>
           {/* <label>Name *</label> */}
-          <input type="text" placeholder='Enter your full name' name="user_name" />
+          <input autocomplete="name" type="text" placeholder='Enter your full name' name="user_name" />
           {/* <label>Email Address *</label> */}
-          <input type="email"placeholder='Enter your email address' name="user_email" />
+          <input autocomplete="email" type="email"placeholder='Enter your email address' name="user_email" />
           {/* <label>Message *</label> */}
           <textarea placeholder='Enter your message' name="message" />
           <input type="submit" value="Send" />
@@ -111,6 +111,8 @@ const StyledContactForm = styled.div`
       padding: 7px;
       outline: none;
       border-radius: 5px;
+      color:white;
+      caret-color: white;
       fontFamily: 'monospace';
       // border: 1px solid #0440cb;
       &:focus {
@@ -128,6 +130,7 @@ const StyledContactForm = styled.div`
       padding: 7px;
       outline: none;
       border-radius: 5px;
+      color:white;
       fontFamily: 'monospace';
       // border: 1px solid #0440cb;
       &:focus {
@@ -147,6 +150,7 @@ const StyledContactForm = styled.div`
       padding-bottom: 3%;
       padding-left: 1%;
       padding-right: 1%;
+      caret-color: red;
       &:hover {
         background-color: #10131F;
         border: 2px solid grey;
