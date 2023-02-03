@@ -146,7 +146,7 @@ export default function Album() {
             <FadeInSection key={image}>
             <Typography
               component="span"
-              variant="h6"
+              variant="subject1"
               color="inherit"
               outline= "none"
               border = 'none'
