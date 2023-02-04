@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import styled from 'styled-components';
 import Typography from '@mui/material/Typography';
-
+import { Box } from '@mui/material';
 export const ContactForm = () => {
   const form = useRef();
 
@@ -23,6 +23,28 @@ export const ContactForm = () => {
 
   return (
     // <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '100px', color: '#FFFFFF' }}>
+    <Box
+    gap = {2.5}
+        sx={{
+          mx:'auto',
+          my: 'auto',
+          // mt: '25%',
+          // mb: '1',
+          backgroundColor: "#10131F",
+          display: "grid",
+          overflowY: 'scroll',
+          '&::-webkit-scrollbar': {display: 'none'},
+          gridTemplateColumns: {
+            mobile: "repeat(1, 1fr)",
+            bigMobile: "repeat(1, 1fr)",
+            tablet: "repeat(1, 1fr)",
+            desktop: "repeat(2, 1fr)"
+          },
+          width: '85%',
+           height: '95%'
+          
+        }}
+    >
       <StyledContactForm>
       <Typography
             align="center"
@@ -34,8 +56,6 @@ export const ContactForm = () => {
             sx={{
               pt:'10%',
               pl: '25%',
-              // ml: '23%',
-              // px: 'auto',
               display: { xs: 'flex', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
@@ -54,15 +74,16 @@ export const ContactForm = () => {
         <br></br>
         <form ref={form} onSubmit={sendEmail}>
           {/* <label>Name *</label> */}
-          <input type="text" placeholder='Enter your full name' name="user_name" />
+          <input autocomplete="name" type="text" placeholder='Enter your full name' name="user_name" />
           {/* <label>Email Address *</label> */}
-          <input type="email"placeholder='Enter your email address' name="user_email" />
+          <input autocomplete="email" type="email"placeholder='Enter your email address' name="user_email" />
           {/* <label>Message *</label> */}
           <textarea placeholder='Enter your message' name="message" />
           <input type="submit" value="Send" />
         </form>
       </StyledContactForm>
-    // </div>
+    {/* // </div> */}
+    </Box>
   );
 };
 
@@ -88,6 +109,8 @@ const StyledContactForm = styled.div`
       padding: 7px;
       outline: none;
       border-radius: 5px;
+      color:white;
+      caret-color: white;
       fontFamily: 'monospace';
       // border: 1px solid #0440cb;
       &:focus {
@@ -105,6 +128,7 @@ const StyledContactForm = styled.div`
       padding: 7px;
       outline: none;
       border-radius: 5px;
+      color:white;
       fontFamily: 'monospace';
       // border: 1px solid #0440cb;
       &:focus {
@@ -124,6 +148,7 @@ const StyledContactForm = styled.div`
       padding-bottom: 3%;
       padding-left: 1%;
       padding-right: 1%;
+      caret-color: red;
       &:hover {
         background-color: #10131F;
         border: 2px solid grey;
