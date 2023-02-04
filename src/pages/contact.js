@@ -56,8 +56,6 @@ export const ContactForm = () => {
             sx={{
               pt:'10%',
               pl: '25%',
-              // ml: '23%',
-              // px: 'auto',
               display: { xs: 'flex', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
