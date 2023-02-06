@@ -5,7 +5,7 @@ import ImageListItem, {
   imageListItemClasses
 } from "@mui/material/ImageListItem";
 import FadeInSection from '../../components/FadeInSection';
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 
 const theme = createTheme({
   breakpoints: {
@@ -29,7 +29,7 @@ const images = importAll(require.context('./images/miju', false, /\.(png|jpe?g|s
 export default function Miju() {
   return (
     <ThemeProvider theme={theme}>
-      <Typography
+      {/* <Typography
             variant="subject1"
             noWrap
             component="a"
@@ -49,7 +49,7 @@ export default function Miju() {
             }}
           >
 
-          </Typography>
+          </Typography> */}
       {/* <h1>New York City</h1> */}
       {/* <h3>Summer 2021</h3> */}
       <Box

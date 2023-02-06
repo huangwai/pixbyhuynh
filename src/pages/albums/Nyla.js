@@ -5,7 +5,7 @@ import ImageListItem, {
   imageListItemClasses
 } from "@mui/material/ImageListItem";
 import FadeInSection from '../../components/FadeInSection';
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 
 const theme = createTheme({
   breakpoints: {
@@ -27,7 +27,7 @@ function importAll(r) {
 export default function Nyla() {
   return (
     <ThemeProvider theme={theme}>
-      <Typography
+      {/* <Typography
             variant="subject1"
             noWrap
             component="a"
@@ -47,7 +47,7 @@ export default function Nyla() {
             }}
           >
             Nyla
-          </Typography>
+          </Typography> */}
       {/* <h1>New York City</h1> */}
       {/* <h3>Summer 2021</h3> */}
       <Box

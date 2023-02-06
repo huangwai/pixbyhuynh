@@ -6,7 +6,7 @@ import ImageListItem, {
 } from "@mui/material/ImageListItem";
 import '../../css/fade.css';
 import FadeInSection from '../../components/FadeInSection';
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 
 const theme = createTheme({
   breakpoints: {
@@ -29,7 +29,7 @@ const images = importAll(require.context('./images/nyc', false, /\.(png|jpe?g|sv
 export default function Nyc() {
   return (
     <ThemeProvider theme={theme}>
-      <Typography
+      {/* <Typography
             variant="subject1"
             noWrap
             component="a"
@@ -49,7 +49,7 @@ export default function Nyc() {
             }}
           >
             New York City Summer 2021
-          </Typography>
+          </Typography> */}
       {/* <h1>New York City</h1> */}
       {/* <h3>Summer 2021</h3> */}
       <Box

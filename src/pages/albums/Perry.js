@@ -6,7 +6,7 @@ import ImageListItem, {
   imageListItemClasses
 } from "@mui/material/ImageListItem";
 import FadeInSection from '../../components/FadeInSection';
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -27,7 +27,7 @@ const images = importAll(require.context('./images/perryStGarage', false, /\.(pn
 export default function PerrySt() {
   return (
     <ThemeProvider theme={theme}>
-      <Typography
+      {/* <Typography
             variant="subject1"
             noWrap
             component="a"
@@ -47,7 +47,7 @@ export default function PerrySt() {
             }}
           >
             Perry St Garage Fall 2021
-          </Typography>
+          </Typography> */}
       {/* <h1>Perry St Garage</h1> */}
       {/* <h3>Fall 2021</h3> */}
       <Box

@@ -7,7 +7,7 @@ import ImageListItem, {
 } from "@mui/material/ImageListItem";
 import '../../css/fade.css';
 import FadeInSection from '../../components/FadeInSection';
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 
 const theme = createTheme({
   breakpoints: {
@@ -29,7 +29,7 @@ const images = importAll(require.context('./images/grad_2022', false, /\.(png|jp
 export default function Graduation() {
   return (
     <ThemeProvider theme={theme}>
-      <Typography
+      {/* <Typography
             variant="subject1"
             noWrap
             component="a"
@@ -49,7 +49,7 @@ export default function Graduation() {
             }}
           >
             Virginia Tech Fall 2022 Graduation
-          </Typography>
+          </Typography> */}
       <Box
       gap = {2.5}
         sx={{

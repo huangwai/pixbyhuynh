@@ -6,7 +6,7 @@ import ImageListItem, {
 } from "@mui/material/ImageListItem";
 import '../../css/fade.css';
 import FadeInSection from '../../components/FadeInSection';
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -27,7 +27,7 @@ const images = importAll(require.context('./images/capone', false, /\.(png|jpe?g
 export default function CapOne() {
   return (
     <ThemeProvider theme={theme}>
-      <Typography
+      {/* <Typography
             variant="subject1"
             noWrap
             component="a"
@@ -47,7 +47,7 @@ export default function CapOne() {
             }}
           >
             Captial One HQ Summer 2022
-          </Typography>
+          </Typography> */}
       {/* <h1>Captial One HQ</h1> */}
       {/* <h3>Summer 2022</h3> */}
       <Box

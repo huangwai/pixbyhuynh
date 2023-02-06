@@ -21,7 +21,7 @@ export const ContactForm = () => {
     );
   };
 
-  return (
+ return (
     // <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '100px', color: '#FFFFFF' }}>
     <Box
     gap = {2.5}

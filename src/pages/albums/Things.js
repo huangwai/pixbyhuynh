@@ -7,7 +7,7 @@ import ImageListItem, {
   imageListItemClasses
 } from "@mui/material/ImageListItem";
 import FadeInSection from '../../components/FadeInSection';
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 
 const theme = createTheme({
   breakpoints: {
@@ -30,7 +30,7 @@ const images = importAll(require.context('./images/things', false, /\.(png|jpe?g
 export default function Things() {
   return (
     <ThemeProvider theme={theme}>
-      <Typography
+      {/* <Typography
             variant="subject1"
             noWrap
             component="a"
@@ -50,7 +50,7 @@ export default function Things() {
             }}
           >
             Cars, Places & More
-          </Typography>
+          </Typography> */}
       <Box
       gap = {2.5}
         sx={{

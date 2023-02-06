@@ -6,7 +6,7 @@ import ImageListItem, {
 } from "@mui/material/ImageListItem";
 import FadeInSection from '../../components/FadeInSection';
 // import '../css/fade.css';
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 
 
 const theme = createTheme({
@@ -30,7 +30,7 @@ const images = importAll(require.context('./images/people', false, /\.(png|jpe?g
 export default function People() {
   return (
     <ThemeProvider theme={theme}>
-      <Typography
+      {/* <Typography
             variant="subject1"
             noWrap
             component="a"
@@ -50,7 +50,7 @@ export default function People() {
             }}
           >
             People
-          </Typography>
+          </Typography> */}
       {/* <h1>Jimmy Huynh</h1> */}
       {/* <h3>December 16th, 2022</h3> */}
       <Box
