@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
-import FadeInSection from '../components/FadeInSection';
+// import FadeInSection from '../components/FadeInSection';
 // import Hero from './albums/Home';
 const images = [
     {
@@ -143,7 +143,7 @@ export default function Album() {
 
           <Image
           loading="lazy">
-            <FadeInSection key={image}>
+            {/* <FadeInSection key={image}> */}
             <Typography
               component="span"
               variant="subject1"
@@ -164,7 +164,7 @@ export default function Album() {
               <ImageMarked className="MuiImageMarked-root" />
 
             </Typography>
-            </FadeInSection>
+            {/* </FadeInSection> */}
 
           </Image>
 
