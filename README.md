@@ -1,5 +1,6 @@
 # Welcome to PixByHuynh 
 Made in React.js incorperating Material UI
+Visit https://pixbyhuynh.vercel.app/ to view the live deployment using Vercel
 
 ### Small Description:
 I am a passionate photographer with a keen eye for capturing moments in time. I have a strong 
