@@ -1,5 +1,5 @@
 # Welcome to PixByHuynh 
-Made in React.js incorperating Material UI
+Made in React.js incorperating Material UI <br />
 Visit https://pixbyhuynh.vercel.app/ to view the live deployment using Vercel
 
 ### Small Description:
